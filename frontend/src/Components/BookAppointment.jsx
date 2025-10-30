@@ -45,7 +45,7 @@ console.log("Logged in user id:", pid);
 
     const fetchDoctors = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/doctor/${specialization}`);
+        const res = await fetch(`https://hospital-management-system-qhz9.onrender.com/doctor/${specialization}`);
         const data = await res.json();
         if (data.success && Array.isArray(data.doctors)) {
           setDoctors(data.doctors);
@@ -68,7 +68,7 @@ console.log("Logged in user id:", pid);
 
       try {
 
-         const res = await fetch(`http://localhost:5000/appointment/appointmentbydate`,
+         const res = await fetch(`https://hospital-management-system-qhz9.onrender.com/appointment/appointmentbydate`,
        {
           method: "POST",
           headers: {
@@ -104,7 +104,7 @@ console.log("Logged in user id:", pid);
   console.log({ specialization, doctor, doctorId, date, time, pid });
 
   try {
-    const res = await fetch("http://localhost:5000/appointment/add", {
+    const res = await fetch("https://hospital-management-system-qhz9.onrender.com/appointment/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

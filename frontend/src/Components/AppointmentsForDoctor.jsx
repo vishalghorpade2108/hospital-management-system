@@ -11,7 +11,7 @@ export default function AppointmentsForDoctor() {
       try {
         const did = localStorage.getItem("doctorId");
         const response = await fetch(
-          `http://localhost:5000/appointment/appointmentbydr?did=${did}`,
+          `https://hospital-management-system-qhz9.onrender.com/appointment/appointmentbydr?did=${did}`,
           {
             method: "GET",
             headers: { "Content-Type": "application/json" },

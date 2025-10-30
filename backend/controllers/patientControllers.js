@@ -70,7 +70,6 @@ export const getPatientName= async (req,res)=>{
     const id=req.params.id;
    
     const isPatient=await Patient.findById(id)
-  
     if(isPatient)
       res.status(200).json(isPatient)
   } catch (error) {

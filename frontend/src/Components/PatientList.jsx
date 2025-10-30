@@ -7,7 +7,7 @@ const PatientsList = () => {
   useEffect(() => {
     const fetchPatients = async () => {
       try {
-        const response = await fetch("http://localhost:5000/patient/allpatients");
+        const response = await fetch("https://hospital-management-system-qhz9.onrender.com/patient/allpatients");
         const data = await response.json();
 
         if (data.success) {

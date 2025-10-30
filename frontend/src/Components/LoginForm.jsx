@@ -14,7 +14,7 @@ export default function LoginForm({ userType, onRegister }) {
     setError("");
 
     try {
-      const response = await fetch(`http://localhost:5000/${userType}/login`, {
+      const response = await fetch(`https://hospital-management-system-qhz9.onrender.com/${userType}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

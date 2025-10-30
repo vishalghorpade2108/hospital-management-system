@@ -9,7 +9,7 @@ const Appointments = () => {
     const fetchAppointments = async () => {
       try {
         const pid = localStorage.getItem("userId");
-        const response = await fetch("http://localhost:5000/appointment/user", {
+        const response = await fetch("https://hospital-management-system-qhz9.onrender.com/appointment/user", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const Appointments = () => {
     if (!window.confirm("Are you sure you want to delete this appointment?")) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/appointment/delete/${id}`, {
+      const response = await fetch(`https://hospital-management-system-qhz9.onrender.com/appointment/delete/${id}`, {
         method: "DELETE",
       });
 

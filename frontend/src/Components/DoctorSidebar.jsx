@@ -42,7 +42,7 @@ export default function DoctorSidebar({ doctorName, onLogout }) {
       >
         <div>
           <h2 className="text-2xl font-bold text-[#00ab9f] mb-8 hidden md:block">
-            Dr. {doctorName}
+            {doctorName}
           </h2>
 
           <ul className="space-y-5 text-lg font-medium">

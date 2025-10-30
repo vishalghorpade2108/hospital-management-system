@@ -26,7 +26,7 @@ export default function PatientDashboard() {
           return;
         }
      
-        const response = await fetch(`http://localhost:5000/patient/getpatientname/${userId}`);
+        const response = await fetch(`https://hospital-management-system-qhz9.onrender.com/patient/getpatientname/${userId}`);
         const data = await response.json();
 
         if (response.ok) {

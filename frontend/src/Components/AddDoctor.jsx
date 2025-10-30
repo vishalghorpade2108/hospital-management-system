@@ -28,7 +28,7 @@ export default function AddDoctor() {
    console.log(name,email,password,specialization,fees)
     
     try {
-      const response = await fetch("http://localhost:5000/doctor/adddoctor", {
+      const response = await fetch("https://hospital-management-system-qhz9.onrender.com/doctor/adddoctor", {
         method: "POST",
           headers: { "Content-Type": "application/json" },
         body: JSON.stringify({name,email,password,specialization,fees}),

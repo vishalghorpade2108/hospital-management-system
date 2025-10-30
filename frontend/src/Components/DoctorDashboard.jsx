@@ -32,7 +32,7 @@ export default function DoctorDashboard() {
         const doctorId = localStorage.getItem("doctorId");
         if (!doctorId) return;
 
-        const doctorRes = await fetch(`http://localhost:5000/doctor/getdoctorname/${doctorId}`);
+        const doctorRes = await fetch(`https://hospital-management-system-qhz9.onrender.com/doctor/getdoctorname/${doctorId}`);
         const doctorData = await doctorRes.json();
         setDoctorName(doctorData.name);
       } catch (error) {

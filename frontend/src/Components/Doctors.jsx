@@ -7,7 +7,7 @@ const DoctorsList = () => {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const response = await fetch("http://localhost:5000/doctor/all"); // adjust API endpoint if needed
+        const response = await fetch("https://hospital-management-system-qhz9.onrender.com/doctor/all"); // adjust API endpoint if needed
         const data = await response.json();
 
         if (data.success) {

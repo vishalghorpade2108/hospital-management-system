@@ -13,7 +13,7 @@ const FeedbackForm = () => {
     try {
       console.log(feedback);
 
-      const response = await fetch("http://localhost:5000/user/feedback/add", {
+      const response = await fetch("https://hospital-management-system-qhz9.onrender.com/user/feedback/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

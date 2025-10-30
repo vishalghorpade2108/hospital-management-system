@@ -8,7 +8,7 @@ const MedicalHistory = () => {
     const fetchMedicalHistory = async () => {
       try {
         const pid = localStorage.getItem("userId");
-        const response = await fetch("http://localhost:5000/medical/patient", {
+        const response = await fetch("https://hospital-management-system-qhz9.onrender.com/medical/patient", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ pid }),
