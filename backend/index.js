@@ -14,7 +14,7 @@ const app = express();
 //  Enable CORS to allow React frontend to connect
 app.use(
   cors({
-    origin: "http://localhost:5173",  // your React app
+    origin: ["https://hospital-management-system-eight-eta.vercel.app","http://localhost:5173"],  // your React app
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
