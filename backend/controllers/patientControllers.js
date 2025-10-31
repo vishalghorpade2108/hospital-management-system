@@ -6,7 +6,7 @@ import Patient from "../models/patient.js"
 
 export const getPatientName= async (req,res)=>{
   try {
-   const userId=req.body
+   const {userId}=req.body
     const isPatient=await Patient.findById(userId)
     if(isPatient)
       res.status(200).json(isPatient)
