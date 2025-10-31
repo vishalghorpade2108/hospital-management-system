@@ -103,7 +103,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* ✅ Mobile Dropdown */}
       <div
         className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
           isOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
@@ -111,32 +111,56 @@ export default function Navbar() {
       >
         <ul className="flex flex-col space-y-2 px-6 py-3 text-gray-700 font-semibold">
           <li>
-            <a href="/" className="block hover:text-green-700">
+            <a
+              href="/"
+              onClick={() => setIsOpen(false)}
+              className="block hover:text-green-700"
+            >
               Home
             </a>
           </li>
           <li>
-            <a href="#services" className="block hover:text-green-700">
+            <a
+              href="#services"
+              onClick={() => setIsOpen(false)}
+              className="block hover:text-green-700"
+            >
               Services
             </a>
           </li>
           <li>
-            <a href="#aboutus" className="block hover:text-green-700">
+            <a
+              href="#aboutus"
+              onClick={() => setIsOpen(false)}
+              className="block hover:text-green-700"
+            >
               About Us
             </a>
           </li>
           <li>
-            <a href="#gallery" className="block hover:text-green-700">
+            <a
+              href="#gallery"
+              onClick={() => setIsOpen(false)}
+              className="block hover:text-green-700"
+            >
               Gallery
             </a>
           </li>
           <li>
-            <a href="#contactus" className="block hover:text-green-700">
+            <a
+              href="#contactus"
+              onClick={() => setIsOpen(false)}
+              className="block hover:text-green-700"
+            >
               Contact Us
             </a>
           </li>
           <li>
-            <a href="#logins" className="block hover:text-green-700">
+            <a
+              href="#logins"
+              onClick={() => setIsOpen(false)}
+              className="block hover:text-green-700"
+            >
               Login
             </a>
           </li>
