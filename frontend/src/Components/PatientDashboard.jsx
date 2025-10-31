@@ -26,7 +26,13 @@ export default function PatientDashboard() {
           return;
         }
      
-        const response = await fetch(`https://hospital-management-system-qhz9.onrender.com/patient/getpatientname/${userId}`);
+        const response = await fetch("https://hospital-management-system-qhz9.onrender.com/patient/getpatientname",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ userId }),
+          }
+        );
         const data = await response.json();
 
         if (response.ok) {

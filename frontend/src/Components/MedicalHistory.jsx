@@ -8,11 +8,14 @@ const MedicalHistory = () => {
     const fetchMedicalHistory = async () => {
       try {
         const pid = localStorage.getItem("userId");
-        const response = await fetch("https://hospital-management-system-qhz9.onrender.com/medical/patient", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ pid }),
-        });
+        const response = await fetch(
+          "https://hospital-management-system-qhz9.onrender.com/medical/patient",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ pid }),
+          }
+        );
 
         const data = await response.json();
         if (data.success) {
@@ -31,9 +34,9 @@ const MedicalHistory = () => {
   }, []);
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
-      <h2 className="text-2xl font-bold text-center mb-6 text-[#00ab9f]">
-        My Medical History
+    <div className="bg-gray-50 min-h-screen p-4 sm:p-6 md:p-8">
+      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 text-[#00ab9f]">
+        🩺 My Medical History
       </h2>
 
       {loading ? (
@@ -41,9 +44,9 @@ const MedicalHistory = () => {
           ⏳ Loading your medical history...
         </div>
       ) : (
-        <div className="overflow-x-auto shadow-lg rounded-lg bg-white">
-          <table className="min-w-full text-sm text-left border border-gray-200">
-            <thead className="bg-blue-100 text-gray-700 uppercase text-sm">
+        <div className="overflow-x-auto shadow-lg rounded-xl bg-white">
+          <table className="min-w-full text-sm sm:text-base text-left border border-gray-200">
+            <thead className="bg-blue-100 text-gray-700 uppercase text-sm sm:text-base">
               <tr>
                 <th className="px-4 py-3 border">#</th>
                 <th className="px-4 py-3 border">Doctor Name</th>
@@ -53,33 +56,34 @@ const MedicalHistory = () => {
                 <th className="px-4 py-3 border">Sugar</th>
                 <th className="px-4 py-3 border">Temp (°C)</th>
                 <th className="px-4 py-3 border">Weight (kg)</th>
-                  <th className="px-4 py-3 border">Date</th>
+                <th className="px-4 py-3 border">Date</th>
                 <th className="px-4 py-3 border">Next Visit</th>
-              
               </tr>
             </thead>
+
             <tbody>
               {records.length > 0 ? (
                 records.map((rec, index) => (
                   <tr
                     key={rec._id}
-                    className="hover:bg-blue-50 transition duration-200"
+                    className="hover:bg-blue-50 transition duration-200 text-gray-700"
                   >
-                    <td className="px-4 py-2 border">{index + 1}</td>
+                    <td className="px-4 py-2 border text-center">{index + 1}</td>
                     <td className="px-4 py-2 border">{rec.dname}</td>
                     <td className="px-4 py-2 border">{rec.disease}</td>
-                    <td className="px-4 py-2 border">{rec.prescription}</td>
-                    <td className="px-4 py-2 border">{rec.bp}</td>
-                    <td className="px-4 py-2 border">{rec.sugar}</td>
-                    <td className="px-4 py-2 border">{rec.temperature}</td>
-                    <td className="px-4 py-2 border">{rec.weight}</td>
-                    <td className="px-4 py-2 border">
+                    <td className="px-4 py-2 border whitespace-pre-line">
+                      {rec.prescription}
+                    </td>
+                    <td className="px-4 py-2 border text-center">{rec.bp}</td>
+                    <td className="px-4 py-2 border text-center">{rec.sugar}</td>
+                    <td className="px-4 py-2 border text-center">{rec.temperature}</td>
+                    <td className="px-4 py-2 border text-center">{rec.weight}</td>
+                    <td className="px-4 py-2 border text-center">
                       {rec.date
                         ? new Date(rec.date).toLocaleDateString("en-GB")
                         : new Date(rec.createdAt).toLocaleDateString("en-GB")}
                     </td>
-                    <td className="px-4 py-2 border">{rec.nextvisit}</td>
-                   
+                    <td className="px-4 py-2 border text-center">{rec.nextvisit}</td>
                   </tr>
                 ))
               ) : (

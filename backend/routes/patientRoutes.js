@@ -4,5 +4,5 @@ const router=express.Router()
 router.post("/register",registerPatient)
 router.post("/login",getPatient)
 router.get("/allpatients",getAllPatients)
-router.get("/getpatientname/:id ",getPatientName)
+router.post("/getpatientname",getPatientName)
 export default  router
